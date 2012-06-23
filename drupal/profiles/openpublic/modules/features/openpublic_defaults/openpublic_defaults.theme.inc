@@ -34,18 +34,23 @@ function openpublic_defaults_theme($existing, $type, $theme, $path) {
 * @TODO: make this (e.g. twitter account) administrable from the user interface.
 *        Will most likely be done as part of Twitter Pull's default impl. itself.
 */
+/**
+ * Made in Lambeth code sprint 23 June 2012
+ * Amended the code to bring in the @lambeth_council feed.
+ */
 function openpublic_defaults_twitter_pull_blocks() {
   return array(
     0 => (object) array(
       'delta' => 'twitter_statedep_block',
-      'tweetkey' => '@StateDept',
-      'title' => t('State Department Tweets:'),
-      'name'  => 'U.S. Department of State Twitter Feed',    
+      'tweetkey' => '@lambeth_council',
+      'title' => t('Lambeth Council tweets:'),
+      'name'  => 'Lambeth Council Twitter Feed',    
       'number_of_items' => 5,
       'theme_key' => 'twitter_pull_listing',    
     )
   );  
 }
+
 
 /*
  * implementation of hook_preprocess_block
